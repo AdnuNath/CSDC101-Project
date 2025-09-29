@@ -586,14 +586,14 @@ int main() {
         cout << endl;
         switch (choicechar) 
         {
-        case 1:
+        case '1':
             {            
             int dmg = max(1, playerATK - bossDEF);
             bossHP -= dmg;
             cout << "   You Dealt " << dmg << " damage." << endl;
             break;
         }
-        case 2:
+        case '2':
         if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
             cout << "   Items: " << endl;
                 if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
@@ -2289,3 +2289,4 @@ int main() {
     if (fightOver == true) {exit(0);}
     return 0;
 }
+
