@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     //Player Stats
-    int playerHP = 40;
+    int playerHP = 400;
     int playerATK = 12;
     int playerDEF = 5;
 
@@ -25,37 +25,52 @@ int main() {
     bool skipNextBossAttack = false;
 
     int choice;
+    char choicechar;
     string pause;
-    // Scene 0 — Introduction
-    cout << "BLEACH: District 67 — A Text-Based Adventure" << endl
+
+
+    // Scene 0 â€” Introduction
+    cout << "BLEACH: District 67 â€” A Text-Based Adventure" << endl
          << "Disclaimer: This is a fan-made educational project. Bleach is created by Tite Kubo." << endl
          << "All rights belong to their respective owners. For classroom use only." << endl
          << endl;
 
     cout << "You are Jun Arashi, a soul living in District 67 of Rukongai." << endl
-         << "One night, a terrible presence descends — a rogue Hollow stalks the district." << endl
+         << "One night, a terrible presence descends â€” a rogue Hollow stalks the district." << endl
          << "You must prepare yourself for the coming battle." << endl
          << endl;
 
     cout << "Press Enter to continue..." << endl;
     getline(cin, pause);
 
-    // Scene 1 — Prologue
+
+    // Scene 1 â€” Prologue
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   District 67, outskirts of Rukongai." << endl
          << endl
          << "   Jun stands in a dark alley as screams echo through the streets." << endl
          << "   The night sky trembles as a Hollow's roar shakes the rooftops." << endl
-         << "   Jun clenches his fists — there is no running now." << endl;
+         << "   Jun clenches his fists â€” there is no running now." << endl;
     getline(cin, pause);
 
-    // Scene 2 — The Saint (Hanae)
+
+    // Scene 2 â€” The Saint (Hanae)
     cout << "   <-------------------------------------------------------------------------->" << endl
+    	 << endl
+    	 << "	Player Starting Status" << endl
+		 << "   Player Status" << endl
+         << "   Name: Jun Arashi" << endl
+         << "   Race: Soul Reaper" << endl
+         << "   HP: " << playerHP << endl
+         << "   ATK: "  << playerATK << endl
+         << "   DEF: " << playerDEF << endl
+         << endl
+         << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   Hanae, the district's wandering saint, approaches you." << endl
          << endl
-         << "   Hanae: \"You look pale, Jun. The night is cruel… let me bless you with light.\"" << endl
+         << "   Hanae: \"You look pale, Jun. The night is cruelâ€¦ let me bless you with light.\"" << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"Just a little strength will do.\" (+4 ATK)" << endl
          << "   [2] Mid  -  \"I'll take whatever you can give.\" (+1 ATK, +1 DEF, +7 HP)" << endl
@@ -81,6 +96,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)";
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -88,16 +105,20 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
-    // Scene 3 — The Tinkerer (Riku)
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    
+
+	// Scene 3 â€” The Tinkerer (Riku)
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   Riku, the district's tinkerer, sits surrounded by scraps of strange metal." << endl
@@ -131,6 +152,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+    //Player Status
+
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -138,22 +161,25 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 4 — Sister Midori (Shrine)
+
+    // Scene 4 â€” Sister Midori (Shrine)
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   You pass a ruined shrine. Sister Midori kneels in prayer." << endl
          << endl
-         << "   Midori: \"Child… I can offer a charm. But the gods ask for something in return.\"" << endl
+         << "   Midori: \"Childâ€¦ I can offer a charm. But the gods ask for something in return.\"" << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"A small blessing, please.\" (+4 ATK)" << endl
          << "   [2] Mid  - \"I'll take the charm.\" (Gain Net, -2 HP)" << endl
@@ -180,6 +206,7 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -187,17 +214,20 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 5 — Yumi the Smuggler
+
+    // Scene 5 â€” Yumi the Smuggler
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   A shadow in the corner alley beckons you. Yumi, the smuggler, grins." << endl
@@ -205,7 +235,7 @@ int main() {
          << "   Yumi: \"Dangerous times, dangerous goods. I can sell you power, if you're willing to pay the price.\"" << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"Something reliable.\" (+11 ATK)" << endl
-         << "   [2] Mid  - \"The Armlet of Mordiggan…\" (+15 ATK, -1 DEF, -2 HP)" << endl
+         << "   [2] Mid  - \"The Armlet of Mordigganâ€¦\" (+15 ATK, -1 DEF, -2 HP)" << endl
          << "   [3] Risky - \"What's your strongest weapon?\" (Gain Divine Rapier, -10 HP, -3 DEF, -3 ATK)" << endl
          << "   Your Choice: ";
     cin >> choice;
@@ -217,7 +247,7 @@ int main() {
             break;
         case 2:
             playerATK += 15; playerDEF -= 1; playerHP -= 2;
-            cout << "   You choose: \"The Armlet of Mordiggan…\" (+15 ATK, -1 DEF, -2 HP)" << endl;
+            cout << "   You choose: \"The Armlet of Mordigganâ€¦\" (+15 ATK, -1 DEF, -2 HP)" << endl;
             break;
         case 3:
             hasRapier = true; playerHP -= 10; playerDEF -= 3; playerATK -= 3;
@@ -229,6 +259,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -236,17 +268,20 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 6 — Kaji the Peddler
+
+    // Scene 6 â€” Kaji the Peddler
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   An old peddler, Kaji, rattles his cart of bottles and charms." << endl
@@ -276,6 +311,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -283,22 +320,25 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 7 — Aiko the Child
+
+    // Scene 7 â€” Aiko the Child
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   Aiko, a small child, tugs at your sleeve with pleading eyes." << endl
          << endl
-         << "   Aiko: \"Please… help us. You're the only one who can stand against the Hollow.\"" << endl
+         << "   Aiko: \"Pleaseâ€¦ help us. You're the only one who can stand against the Hollow.\"" << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"I'll do my best.\" (+2 ATK)" << endl
          << "   [2] Mid  - \"I'll push myself harder.\" (+1 ATK, +1 DEF, -1 HP)" << endl
@@ -323,6 +363,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -330,22 +372,25 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 8 — Master Renga
+
+    // Scene 8 â€” Master Renga
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   Your old mentor, Renga, leans on his cane and lowers his sunglasses." << endl
          << endl
-         << "   Renga: \"Jun… take these. You'll need sharp eyes more than a sharp blade.\"" << endl
+         << "   Renga: \"Junâ€¦ take these. You'll need sharp eyes more than a sharp blade.\"" << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"A steady path will do.\" (+5 ATK)" << endl
          << "   [2] Mid  - \"I'll endure the strain.\" (+7 ATK, -2 HP)" << endl
@@ -372,6 +417,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -379,17 +426,20 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 9 — Mika the Charm-Seller
+
+    // Scene 9 â€” Mika the Charm-Seller
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
          << "   Mika holds a tray of strange charms." << endl
@@ -397,7 +447,7 @@ int main() {
          << "   Mika: \"These trinkets are cursed and blessed alike. What will you take?\"" << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"A small charm.\" (+2 ATK)" << endl
-         << "   [2] Mid  - \"That one… it glows faintly.\" (Gain Schala's Amulet, -3 HP)" << endl
+         << "   [2] Mid  - \"That oneâ€¦ it glows faintly.\" (Gain Schala's Amulet, -3 HP)" << endl
          << "   [3] Risky - \"I want the strongest one!\" (+11 ATK, +2 DEF, -7 HP)" << endl
          << "   Your Choice: ";
     cin >> choice;
@@ -409,7 +459,7 @@ int main() {
             break;
         case 2:
             hasAmulet = true; playerHP -= 3;
-            cout << "   You choose: \"That one… it glows faintly.\" (Gain Schala's Amulet, -3 HP)" << endl
+            cout << "   You choose: \"That oneâ€¦ it glows faintly.\" (Gain Schala's Amulet, -3 HP)" << endl
                  << "   You have gained an Item!" << endl
                  << "   You Obtained Schala's Amulet";
             break;
@@ -421,6 +471,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -428,20 +480,23 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
-    // Scene 10 — Supply Cache
+
+    // Scene 10 â€” Supply Cache
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
-         << "   You find a hidden cache of supplies — medicine, weapons, armor." << endl
+         << "   You find a hidden cache of supplies â€” medicine, weapons, armor." << endl
          << "   Choose:" << endl
          << "   [1] Safe - \"Patch me up completely.\" (Set HP to 50)" << endl
          << "   [2] Mid  - \"I'll take the sharper blades.\" (+12 ATK, -3 HP)" << endl
@@ -466,6 +521,8 @@ int main() {
             cout << "   You choose: Not on the Option (No Stats Added.)" << endl;
             break;
     }
+
+    //Player Status
     cout << "   Player Status" << endl
          << "   Name: Jun Arashi" << endl
          << "   Race: Soul Reaper" << endl
@@ -473,32 +530,34 @@ int main() {
          << "   ATK: "  << playerATK << endl
          << "   DEF: " << playerDEF << endl
          << endl;
+         
+    //Inventory
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
     cin.ignore();
     cin.get();
-    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << " Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
+    if (playerHP <= 0) { if (hasAmulet) { hasAmulet = false; playerHP = 1; cout << endl << "	Schala's Amulet shatters and restores you to 1 HP!" << endl; } else { cout << endl << " You fall to the ground... Your journey ends here." << endl; return 0; } }
 
     if (playerDEF < 0) playerDEF = 0;
 
 
-    // Scene 11 — Boss Fight: Bjorne the Rogue Hollow
+    // Scene 11 â€” Boss Fight: Bjorne the Rogue Hollow
     cout << "   <-------------------------------------------------------------------------->" << endl
          << endl
-         << "The ground splits. Bjorne, a towering Hollow, rises from the shadows." << endl
+         << "	The ground splits. Bjorne, a towering Hollow, rises from the shadows." << endl
          << endl
-         << "Bjorne: \"Foolish soul… your resistance amuses me.\"" << endl
+         << "	Bjorne: \"Foolish soulâ€¦ your resistance amuses me.\"" << endl
          << endl;
-    cin.ignore();
     cin.get();
-    // Preliminary status display
-    cout << "Boss Stats: HP 400, ATK 21, DEF 20" << endl;
-    cout << "Current Boss HP: " << bossHP << "  Boss DEF: " << bossDEF << endl;
-    cout << "Your current stats: HP: " << playerHP << "  ATK: " << playerATK << "  DEF: " << playerDEF << endl;
+    
+    // Boss Stats
+    cout << "	Boss Stats: HP 400, ATK 21, DEF 20" << endl;
+    cout << "	Current Boss HP: " << bossHP << "  Boss DEF: " << bossDEF << endl;
+    cout << "	Your current stats: HP: " << playerHP << "  ATK: " << playerATK << "  DEF: " << playerDEF << endl;
     cout << endl;
 
     cout << "   Boss Status" << "                 " << "    Player Status" << endl
@@ -509,1378 +568,1724 @@ int main() {
          << "   DEF: " << bossDEF << "                 " << "        DEF: " << playerDEF << endl
          << endl;
 
-    // Flags to track fight outcome
+    // Track Fights
     bool fightOver = false;
     bool playerDead = false;
     bool bossDead = false;
-    // --- Each turn is explicit (no loops). On each turn player may: Attack / Use item / Do nothing.
-    // --- Using item attempts Rapier first, then Net, then Sunglasses (per previous design).
-    // -------- TURN 1 --------
+
+    // TURN 1 
     if (!fightOver) {
-        cout << "Turn 1" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) 
+        cout << "   --- Turn 1 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
         {
         case 1:
             {            
             int dmg = max(1, playerATK - bossDEF);
             bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
+            cout << "   You Dealt " << dmg << " damage." << endl;
             break;
         }
         case 2:
         if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
             cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
                 if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
                 {
                 case 1:
                     if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
                     break;
                 case 3:
                     if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
                     break;
                 case 4:
                     if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 default:
-                    cout << "Not a Valid Item. Attack Missed";
+                    cout << "	No Item Found! You Skip a Turn!";
                     break;
                 }
+        	break;
         } 
-        else {cout << "No Item Found! You Skip a Turn!";}
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
             break;
     }
+    
         // Check boss death
         if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
+            cout << "	Bjorne falls beneath your strike!" << endl;
             bossDead = true; fightOver = true;
         } else {
             // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
 
             // Boss attack
             if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
+                cout << "	Boss's attack is skipped this turn." << endl;
                 skipNextBossAttack = false;
             } else {
                 int dmg = max(1, bossATK - playerDEF);
                 playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
                 if (playerHP <= 0 && hasAmulet) {
                     hasAmulet = false;
                     playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
                 }
                 if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
+                    cout << "	You fall to the ground..." << endl;
                     playerDead = true; fightOver = true;
                 }
             }
         }
     }
-    // -------- TURN 2 --------
+    // TURN 2 
     if (!fightOver) {
-        cout << endl << "Turn 2" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
+                cout << endl << "   --- Turn 2 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
         case 1:
             {            
             int dmg = max(1, playerATK - bossDEF);
             bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
+            cout << "   You Dealt " << dmg << " damage." << endl;
             break;
         }
         case 2:
         if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
             cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
                 if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
                 {
                 case 1:
                     if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
                     break;
                 case 3:
                     if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
                     break;
                 case 4:
                     if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 default:
-                    cout << "Not a Valid Item. Attack Missed";
+                    cout << "	No Item Found! You Skip a Turn!";
                     break;
                 }
+        	break;
         } 
-        else {cout << "No Item Found! You Skip a Turn!";}
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
             break;
-        }
+    }
+    
         // Check boss death
         if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
+            cout << "	Bjorne falls beneath your strike!" << endl;
             bossDead = true; fightOver = true;
         } else {
             // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
 
             // Boss attack
             if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
+                cout << "	Boss's attack is skipped this turn." << endl;
                 skipNextBossAttack = false;
             } else {
                 int dmg = max(1, bossATK - playerDEF);
                 playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
                 if (playerHP <= 0 && hasAmulet) {
                     hasAmulet = false;
                     playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
                 }
                 if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
+                    cout << "	You fall to the ground..." << endl;
                     playerDead = true; fightOver = true;
                 }
             }
         }
     }
-    // -------- TURN 3 --------
+    // TURN 3
     if (!fightOver) {
-        cout << endl << "Turn 3" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
+                cout << endl << "   --- Turn 3 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
         case 1:
             {            
             int dmg = max(1, playerATK - bossDEF);
             bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
+            cout << "   You Dealt " << dmg << " damage." << endl;
             break;
         }
         case 2:
         if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
             cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
                 if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
                 {
                 case 1:
                     if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
                     break;
                 case 3:
                     if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
                     break;
                 case 4:
                     if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 default:
-                    cout << "Not a Valid Item. Attack Missed";
+                    cout << "	No Item Found! You Skip a Turn!";
                     break;
                 }
+        	break;
         } 
-        else {cout << "No Item Found! You Skip a Turn!";}
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
             break;
     }
+    
         // Check boss death
         if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
+            cout << "	Bjorne falls beneath your strike!" << endl;
             bossDead = true; fightOver = true;
         } else {
             // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
 
             // Boss attack
             if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
+                cout << "	Boss's attack is skipped this turn." << endl;
                 skipNextBossAttack = false;
             } else {
                 int dmg = max(1, bossATK - playerDEF);
                 playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
                 if (playerHP <= 0 && hasAmulet) {
                     hasAmulet = false;
                     playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
                 }
                 if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
+                    cout << "	You fall to the ground..." << endl;
                     playerDead = true; fightOver = true;
                 }
             }
         }
     }
-    // -------- TURN 4 --------
+    // TURN 4
     if (!fightOver) {
-        cout << endl << "Turn 4" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
+                cout << endl << "   --- Turn 4 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
         case 1:
             {            
             int dmg = max(1, playerATK - bossDEF);
             bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
+            cout << "   You Dealt " << dmg << " damage." << endl;
             break;
         }
         case 2:
         if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
             cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
                 if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
                 {
                 case 1:
                     if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
                     break;
                 case 3:
                     if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
                     break;
                 case 4:
                     if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
                     break;
                 default:
-                    cout << "Not a Valid Item. Attack Missed";
+                    cout << "	No Item Found! You Skip a Turn!";
                     break;
                 }
+        	break;
         } 
-        else {cout << "No Item Found! You Skip a Turn!";}
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
             break;
     }
+    
         // Check boss death
         if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
+            cout << "	Bjorne falls beneath your strike!" << endl;
             bossDead = true; fightOver = true;
         } else {
             // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
 
             // Boss attack
             if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
+                cout << "	Boss's attack is skipped this turn." << endl;
                 skipNextBossAttack = false;
             } else {
                 int dmg = max(1, bossATK - playerDEF);
                 playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
                 if (playerHP <= 0 && hasAmulet) {
                     hasAmulet = false;
                     playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
                 }
                 if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 5 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 5 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 6 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 6 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 7 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 7 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 8 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 8 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 9 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 9 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 10 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 10 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 11 
+    if (!fightOver) {
+                cout << endl << "   --- Turn 11 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 12
+    if (!fightOver) {
+                cout << endl << "   --- Turn 12 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 13 
+    if (!fightOver) {
+        cout << endl << "   --- Turn 13 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 14 
+    if (!fightOver) {
+        cout << endl << "   --- Turn 14 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
+                    playerDead = true; fightOver = true;
+                }
+            }
+        }
+    }
+    // TURN 15 
+    if (!fightOver) {
+        cout << endl << "   --- Turn 15 ---" << endl
+             << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
+             << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
+             << "   Choose action: "<< endl 
+             << "   [1] Attack  " << endl
+             << "   [2] Use item" << endl
+             << "   Move: ";
+        cin >> choicechar;
+        cout << endl;
+        switch (choicechar) 
+        {
+        case 1:
+            {            
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   You Dealt " << dmg << " damage." << endl;
+            break;
+        }
+        case 2:
+        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
+            cout << "   Items: " << endl;
+                if (hasRapier == true){cout << "   [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
+                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasSunglasses == true){cout << "   [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
+                if (hasRustbite == true){cout << "   [4] Rustbite Charge [Active] - Permanently reduces Bjorneâ€™s DEF by 6." << endl;}
+                if (hasAmulet == true){cout << "   Schala's Amulet [Passive] - If Junâ€™s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
+            cout << endl
+				 << "   Which Item To Use? ";
+            cin >> choicechar;
+                switch (choicechar)
+                {
+                case 1:
+                    if (hasRapier == true)
+                    {cout << "	You use the Divine Rapier! (275 true damage)" << endl;
+                    bossHP -= 275; hasRapier = false;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                case 2:
+                    if (hasNet == true){
+					cout << "	You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                case 3:
+                    if (hasSunglasses == true)
+                    {cout << "	You use the Sunglasses. Boss's next attack will be skipped." << endl;
+                    skipNextBossAttack = true; 
+					hasNet = false; 
+					int dmg = max(1, playerATK - bossDEF);
+            		bossHP -= dmg;
+            		cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+					} else {
+					cout << " Not a Valid Item. Attack Missed";
+					}
+                    break;
+                    break;
+                case 4:
+                    if (hasRustbite == true)
+                    {cout << "	You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
+                    bossDEF -= 6;} else {cout << "  Not a Valid Item. Attack Missed";}
+                    break;
+                default:
+                    cout << "	No Item Found! You Skip a Turn!";
+                    break;
+                }
+        	break;
+        } 
+        default:
+            int dmg = max(1, playerATK - bossDEF);
+            bossHP -= dmg;
+            cout << "   Auto Move: You Attack and Dealt " << dmg << " damage." << endl;
+            break;
+    }
+    
+        // Check boss death
+        if (bossHP <= 0) {
+            cout << "	Bjorne falls beneath your strike!" << endl;
+            bossDead = true; fightOver = true;
+        } else {
+            // Boss taunt
+            if (bossHP > 300) cout << "    Bjorne: Tiny spark. I will crush you slowly." << endl;
+            else if (bossHP > 200) cout << "    Bjorne: You stingâ€¦ nothing more." << endl;
+            else if (bossHP > 100) cout << "	Bjorne: Impossibleâ€¦ you persist?!" << endl;
+            else cout << "	Bjorne: I will DEVOUR YOU!" << endl;
+
+            // Boss attack
+            if (skipNextBossAttack) {
+                cout << "	Boss's attack is skipped this turn." << endl;
+                skipNextBossAttack = false;
+            } else {
+                int dmg = max(1, bossATK - playerDEF);
+                playerHP -= dmg;
+                cout << "	Bjorne Dealt " << dmg << " damage." << endl;
+                if (playerHP <= 0 && hasAmulet) {
+                    hasAmulet = false;
+                    playerHP = 1;
+                    cout << "	Schala's Amulet shatters and restores you to 1 HP." << endl;
+                }
+                if (playerHP <= 0) {
+                    cout << "	You fall to the ground..." << endl;
                     playerDead = true; fightOver = true;
                 }
             }
         }
     }
     
-    // -------- TURN 5 --------
-    if (!fightOver) {
-        cout << endl << "Turn 5" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-
-    // -------- TURN 6 --------
-    if (!fightOver) {
-        cout << endl << "Turn 6" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // -------- TURN 7 --------
-    if (!fightOver) {
-        cout << endl << "Turn 7" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // -------- TURN 8 --------
-    if (!fightOver) {
-        cout << endl << "Turn 8" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // -------- TURN 9 --------
-    if (!fightOver) {
-        cout << endl << "Turn 9" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
     
-    // -------- TURN 10 --------
-    if (!fightOver) {
-        cout << endl << "Turn 10" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    
-    // -------- TURN 11 --------
-    if (!fightOver) {
-        cout << endl << "Turn 11" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    
-    // -------- TURN 12 --------
-    if (!fightOver) {
-        cout << endl << "Turn 12" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // -------- TURN 13 --------
-    if (!fightOver) {
-        cout << endl << "Turn 13" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // -------- TURN 14 --------
-    if (!fightOver) {
-        cout << endl << "Turn 14" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // -------- TURN 15 (FINAL TURN) --------
-    if (!fightOver) {
-        cout << endl << "Turn 15" << endl
-             << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl
-             << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl
-             << "Choose action: "<< endl 
-             << "[1] Attack  " << endl
-             << "[2] Use item" << endl
-             << "Move: " << endl;
-        cin >> choice;
-        switch (choice) {
-        case 1:
-            {            
-            int dmg = max(1, playerATK - bossDEF);
-            bossHP -= dmg;
-            cout << "You Dealt " << dmg << " damage." << endl;
-            break;
-        }
-        case 2:
-        if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {
-            cout << "   Items: " << endl;
-                if (hasRapier == true){cout << "    [1] Divine Rapier [Active] - One-time use, deals 275 true damage (ignores DEF)." << endl;}
-                if (hasNet == true){cout << "   [2] 90-Caliber Net [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasSunglasses == true){cout << "    [3] Sunglasses [Active] - Free action, once. Skips the next boss attack." << endl;}
-                if (hasRustbite == true){cout << "  [4] Rustbite Charge [Active] - Permanently reduces Bjorne’s DEF by 6." << endl;}
-                if (hasAmulet == true){cout << "    Schala's Amulet [Passive] - If Jun’s HP falls to 0 or less, the amulet shatters and restores him to 1 HP instead. (Cannot be Used)" << endl;}
-            cout << "Which Item To Use?" << endl;
-            cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                    if (hasRapier == true)
-                    {cout << "You use the Divine Rapier! (275 true damage)" << endl;
-                    bossHP -= 275; hasRapier = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 2:
-                    if (hasNet == true)
-                    {cout << "You use the 90-Caliber Net. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasNet = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 3:
-                    if (hasSunglasses == true)
-                    {cout << "You use the Sunglasses. Boss's next attack will be skipped." << endl;
-                    skipNextBossAttack = true; hasSunglasses = false;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                case 4:
-                    if (hasRustbite == true)
-                    {cout << "You use the Rustbite Charge. Boss Defense Permanently reduced by 6" << endl;
-                    bossDEF -= 6;} else {cout << "Not a Valid Item. Attack Missed";}
-                    break;
-                default:
-                    cout << "Not a Valid Item. Attack Missed";
-                    break;
-                }
-        } 
-        else {cout << "No Item Found! You Skip a Turn!";}
-            break;
-    }
-        // Check boss death
-        if (bossHP <= 0) {
-            cout << "Bjorne falls beneath your strike!" << endl;
-            bossDead = true; fightOver = true;
-        } else {
-            // Boss taunt
-            if (bossHP > 300) cout << "Bjorne: Tiny spark. I will crush you slowly." << endl;
-            else if (bossHP > 200) cout << "Bjorne: You sting… nothing more." << endl;
-            else if (bossHP > 100) cout << "Bjorne: Impossible… you persist?!" << endl;
-            else cout << "Bjorne: I will DEVOUR YOU!" << endl;
-
-            // Boss attack
-            if (skipNextBossAttack) {
-                cout << "Boss's attack is skipped this turn." << endl;
-                skipNextBossAttack = false;
-            } else {
-                int dmg = max(1, bossATK - playerDEF);
-                playerHP -= dmg;
-                cout << "Bjorne Dealt " << dmg << " damage." << endl;
-                if (playerHP <= 0 && hasAmulet) {
-                    hasAmulet = false;
-                    playerHP = 1;
-                    cout << "Schala's Amulet shatters and restores you to 1 HP." << endl;
-                }
-                if (playerHP <= 0) {
-                    cout << "You fall to the ground..." << endl;
-                    playerDead = true; fightOver = true;
-                }
-            }
-        }
-    }
-    // ---------------- Resolve Ending ----------------
-    cout << endl << "--- Encounter Resolution ---" << endl;
+    // Ending sequence
+    cout << endl << "   --- Encounter Resolution ---" << endl;
     if (bossHP <= 0) {
+
         // Victory
-        cout << "Victory: Jun slays Bjorne, shinigami arrive, Jun is invited to the Academy." << endl;
+        cout << "   Victory: Jun slays Bjorne, shinigami arrive, Jun is invited to the Academy." << endl;
     } else if (playerHP <= 0) {
+
         // Defeat
-        cout << "Defeat: Jun dies, but his stand delays Bjorne until shinigami finish it. Remembered as a hero." << endl;
+        cout << "   Defeat: Jun dies, but his stand delays Bjorne until shinigami finish it. Remembered as a hero." << endl;
     } else {
+
         // Fatigue Defeat (15 turns passed)
-        cout << "Fatigue Defeat: 15 turns have passed and Bjorne still stands." << endl;
-        cout << "Jun collapses, shinigami arrive too late. The district is saved, but Jun dies a hero." << endl;
+        cout << "   Fatigue Defeat: 15 turns have passed and Bjorne still stands." << endl;
+        cout << "   Jun collapses, shinigami arrive too late. The district is saved, but Jun dies a hero." << endl;
     }
+
 
     // Final stats summary
-    cout << endl << "Final Stats:" << endl;
-    cout << "Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl;
-    cout << "Boss HP: " << bossHP << " | DEF: " << bossDEF << endl;
+    cout << endl << "   Final Stats:" << endl;
+    cout << "   Player HP: " << playerHP << " | ATK: " << playerATK << " | DEF: " << playerDEF << endl;
+    cout << "   Boss HP: " << bossHP << " | DEF: " << bossDEF << endl;
+
     if (hasRapier == true || hasNet == true || hasSunglasses == true || hasAmulet == true || hasRustbite == true) {cout << "   Items: " << endl;}
-    if (hasRapier == true){cout << "    Divine Rapier [Active]" << endl;}
+    if (hasRapier == true){cout << "   Divine Rapier [Active]" << endl;}
     if (hasNet == true){cout << "   90-Caliber Net [Active]" << endl;}
-    if (hasSunglasses == true){cout << "    Sunglasses [Active]" << endl;}
-    if (hasAmulet == true){cout << "    Schala's Amulet [Passive]" << endl;}
-    if (hasRustbite == true){cout << "  Rustbite Charge [Active]" << endl;}
-    cout << endl << "--- END ---" << endl;
+    if (hasSunglasses == true){cout << "   Sunglasses [Active]" << endl;}
+    if (hasAmulet == true){cout << "   Schala's Amulet [Passive]" << endl;}
+    if (hasRustbite == true){cout << "   Rustbite Charge [Active]" << endl;}
+
+    cout << endl << "   --- END ---" << endl;
     if (fightOver == true) {exit(0);}
     return 0;
 }
