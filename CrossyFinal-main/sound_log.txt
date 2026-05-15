@@ -1,0 +1,8 @@
+OK: music/bgm.mp3
+DIAG press: file opened OK, size=8359 bytes
+DIAG press: SoundBuffer OK (23040 samples, 44100 Hz, 2 ch)
+OK: music/press.mp3
+OK: music/clickinteract.mp3
+OK: music/death.mp3
+OK: music/defeat.mp3
+OK: music/Wiin.mp3
